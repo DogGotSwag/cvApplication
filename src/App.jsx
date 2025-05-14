@@ -42,14 +42,6 @@ function App() {
         <p>I was at HHS studying for diploma from 2018-2022</p>
 
         <Experience title="Practical"></Experience>
-
-
-        <h2>Practical Experience</h2>
-        <p>I was at walmart working as cashier from 2022-Present</p>
-        <p>I was at Taco Bell working as cashier from 2020-2022</p>
-
-
-
     </div>
   )
 }
