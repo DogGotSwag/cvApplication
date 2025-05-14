@@ -1,19 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 
-function Input({ label, text }) {
-
-  function handleChange(e) {
-    setText(e.target.value);
-  }
-
+function Input({ id, label, text, handleChange }) {
   return (
     <label>
       {label}
       {': '}
       <input
         value={text}
-        onChange={handleChange}
+        onChange={(e) => handleChange(id,e)}
       />
     </label>
   );
@@ -34,6 +29,11 @@ function Experience({title}){
     (editMode) ? setEditMode(false): setEditMode(true);
   }
 
+  function handleChange(id, e){
+    alert(e.target);
+
+  }
+
   
 
   return (
@@ -49,7 +49,7 @@ function Experience({title}){
           editMode ? 
           items.map(curr => {
             return <li>
-              <Input label="where" text={curr.where}></Input>
+              <Input id={curr.id} label="where" text={curr.where} handleChange={handleChange}></Input>
               <Input label="title" text={curr.title}></Input>
               <Input label="start" text={curr.start}></Input>
               <Input label="end" text={curr.end}></Input>
