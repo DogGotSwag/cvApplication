@@ -10,6 +10,7 @@ function Experience({title}){
   ];
 
   const [items, setItems] = useState(initialItems);
+  const [editMode, setEditMode] = useState(false);
 
   
 
