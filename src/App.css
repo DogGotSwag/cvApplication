@@ -19,4 +19,10 @@ button{
   cursor: pointer;
 }
 
+ul{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 

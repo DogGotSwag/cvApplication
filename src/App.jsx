@@ -17,10 +17,10 @@ function Input({ id, label, text, handleChange }) {
 function Experience({title}){
 
   let nextId = 3;
-  const initialItems = {
-    0: { id: 0, where: 'Walmart', title: 'cashier', start:'2022', end:'present' },
-    1: { id: 1, where: 'TacoBell', title: 'cashier', start:'2020', end:'2022' },
-  };
+  const initialItems = [
+    { id: 0, where: 'Walmart', title: 'cashier', start:'2022', end:'present' },
+    { id: 1, where: 'TacoBell', title: 'cashier', start:'2020', end:'2022' },
+  ];
 
   const [items, setItems] = useState(initialItems);
   const [editMode, setEditMode] = useState(true);
