@@ -10,7 +10,7 @@ function Experience({title}){
   ];
 
   const [items, setItems] = useState(initialItems);
-  const [editMode, setEditMode] = useState(false);
+  const [editMode, setEditMode] = useState(true);
 
   
 
@@ -20,9 +20,16 @@ function Experience({title}){
           <button>Edit</button>
       </h2>
       <ul>
-      {items.map(curr => {
-        return <li>{"I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end}</li>
-      })}
+
+        {
+          editMode ? 
+          <h1>hello</h1> 
+          : 
+          items.map(curr => {
+        return <li>{
+          "I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end
+          }</li>})}
+     
 
       </ul>
     </div>
