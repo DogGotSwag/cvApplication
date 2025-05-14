@@ -22,7 +22,7 @@ function Experience({title}){
     <div>
       <h2>{title} Experience 
           <button onClick={handleButtonClick}>
-            Edit
+            {editMode ? 'Submit' : 'Edit'}
           </button>
       </h2>
       <ul>
