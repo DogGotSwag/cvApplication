@@ -1,6 +1,24 @@
 import { useState } from 'react'
 import './App.css'
 
+function Input({ label, text }) {
+
+  function handleChange(e) {
+    setText(e.target.value);
+  }
+
+  return (
+    <label>
+      {label}
+      {': '}
+      <input
+        value={text}
+        onChange={handleChange}
+      />
+    </label>
+  );
+}
+
 function Experience({title}){
 
   let nextId = 3;
@@ -29,7 +47,15 @@ function Experience({title}){
 
         {
           editMode ? 
-          <h1>hello</h1> 
+          items.map(curr => {
+            return <li>
+              <Input label="where" text={curr.where}></Input>
+              <Input label="title" text={curr.title}></Input>
+              <Input label="start" text={curr.start}></Input>
+              <Input label="end" text={curr.end}></Input>
+            </li>
+          })
+            
           : 
           items.map(curr => {
         return <li>{
