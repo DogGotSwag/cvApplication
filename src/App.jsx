@@ -12,12 +12,18 @@ function Experience({title}){
   const [items, setItems] = useState(initialItems);
   const [editMode, setEditMode] = useState(true);
 
+  function handleButtonClick(e){
+    (editMode) ? setEditMode(false): setEditMode(true);
+  }
+
   
 
   return (
     <div>
       <h2>{title} Experience 
-          <button>Edit</button>
+          <button onClick={handleButtonClick}>
+            Edit
+          </button>
       </h2>
       <ul>
 
