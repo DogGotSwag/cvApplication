@@ -15,7 +15,9 @@ function Experience({title}){
 
   return (
     <div>
-      <h2>{title} Experience</h2>
+      <h2>{title} Experience 
+          <button>Edit</button>
+      </h2>
       <ul>
       {items.map(curr => {
         return <li>{"I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end}</li>
