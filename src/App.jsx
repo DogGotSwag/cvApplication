@@ -16,9 +16,12 @@ function Experience({title}){
   return (
     <div>
       <h2>{title} Experience</h2>
+      <ul>
       {items.map(curr => {
-        return <p>{"I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end}</p>
+        return <li>{"I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end}</li>
       })}
+
+      </ul>
     </div>
   );
 }
