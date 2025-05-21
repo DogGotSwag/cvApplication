@@ -64,8 +64,10 @@ function Experience({title}){
           "I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end
           }</li>})}
      
+      {editMode && <button>Add</button>}
 
       </ul>
+
     </div>
   );
 }
