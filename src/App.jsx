@@ -70,7 +70,7 @@ function Experience({title, dataToString, initialItems}){
             
           : 
           items.map(curr => {
-        return <li key={curr.id}>{ dataToString(curr.where, curr.title, curr.start, curr.end)}</li>})}
+        return <li key={curr.id}>{ dataToString(curr)}</li>})}
      
       {editMode && <button onClick={handleAddClick}>Add</button>}
 
@@ -80,18 +80,18 @@ function Experience({title, dataToString, initialItems}){
   );
 }
 
-function practicalText(where, title, start, end){
-  return "I was at "+where+" working as "+title+" from "+start+" - "+end;
+function practicalText(data){
+  return "I was at "+data.where+" working as "+data.title+" from "+data.start+" - "+data.end;
 }
-function educationalText(where, title, start, end){
-  return "I was at "+where+" studying for "+title+" from "+start+" - "+end;
+function educationalText(data){
+  return "I was at "+data.where+" studying for "+data.title+" from "+data.start+" - "+data.end;
 }
 
 const initialItemsEdu = [
-  { id: 0, where: '', title: '', start:'', end:'' },
+  { id: crypto.randomUUID(), where: '', title: '', start:'', end:'' },
 ];
 const initialItemsPrac = [
-  { id: 0, where: '', title: '', description: '', start:'', end:'' },
+  { id: crypto.randomUUID(), where: '', title: '', description: '', start:'', end:'' },
 ];
 
 function App() {
