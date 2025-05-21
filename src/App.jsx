@@ -15,14 +15,7 @@ function Input({ id, label, text, handleChange }) {
   );
 }
 
-function Experience({title, dataToString}){
-
-  let nextId = 2;
-  const initialItems = [
-    { id: 0, where: 'Walmart', title: 'cashier', start:'2022', end:'present' },
-    { id: 1, where: 'TacoBell', title: 'cashier', start:'2020', end:'2022' },
-  ];
-
+function Experience({title, dataToString, initialItems}){
   const [items, setItems] = useState(initialItems);
   const [editMode, setEditMode] = useState(false);
 
@@ -94,6 +87,11 @@ function educationalText(where, title, start, end){
   return "I was at "+where+" studying for "+title+" from "+start+" - "+end;
 }
 
+const initialItems = [
+  { id: 0, where: 'Walmart', title: 'cashier', start:'2022', end:'present' },
+  { id: 1, where: 'TacoBell', title: 'cashier', start:'2020', end:'2022' },
+];
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -105,8 +103,8 @@ function App() {
           <li>999-999-9999</li>
         </ul>
 
-        <Experience title="Educational" dataToString={educationalText}></Experience>
-        <Experience title="Practical" dataToString={practicalText}></Experience>
+        <Experience title="Educational" initialItems={initialItems} dataToString={educationalText}></Experience>
+        <Experience title="Practical" initialItems={initialItems} dataToString={practicalText}></Experience>
     </div>
   )
 }
