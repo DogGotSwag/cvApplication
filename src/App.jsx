@@ -71,7 +71,7 @@ function Experience({title, dataToString, initialItems, isTop}){
 
             return <li>
               {arrayOfInputs}
-              <button className='delete' onClick={() => handleDelete(curr.id)}>delete</button>
+              { !isTop && <button className='delete' onClick={() => handleDelete(curr.id)}>delete</button>}
             </li>
           })
             
