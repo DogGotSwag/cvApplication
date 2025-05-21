@@ -81,7 +81,9 @@ function Experience({title, dataToString, initialItems}){
 }
 
 function practicalText(data){
-  return "I was at "+data.where+" working as "+data.title+" from "+data.start+" - "+data.end;
+  return <>
+   <p>{`I was at ${data.where} working as ${data.title} from ${data.start} - ${data.end}`} </p>
+   <p> Description: {data.description}</p></>;
 }
 function educationalText(data){
   return "I was at "+data.where+" studying for "+data.title+" from "+data.start+" - "+data.end;
