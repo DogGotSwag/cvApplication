@@ -112,11 +112,8 @@ const initialItemsTop = [
 ];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
-
         <Experience title="Resume for" isTop={true} initialItems={initialItemsTop} dataToString={topText}></Experience>
         <Experience title="Educational Experience" initialItems={initialItemsEdu} dataToString={educationalText}></Experience>
         <Experience title="Practical Experience" initialItems={initialItemsPrac} dataToString={practicalText}></Experience>
