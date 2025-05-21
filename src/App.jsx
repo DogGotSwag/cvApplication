@@ -15,7 +15,7 @@ function Input({ id, label, text, handleChange }) {
   );
 }
 
-function Experience({title, dataToString, initialItems, isTop}){
+function Experience({title, dataToString, initialItems, isTop = false}){
   const [items, setItems] = useState(initialItems);
   const [editMode, setEditMode] = useState(false);
 
