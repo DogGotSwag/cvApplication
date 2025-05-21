@@ -36,6 +36,13 @@ function Experience({title}){
     setItems([...copy]);
   }
 
+  function handleAddClick(){
+    const newInfoObj = {id: crypto.randomUUID(), where: '', title: '', start: '', end:''};
+    const dataCopy = [...items];
+    dataCopy.push(newInfoObj);
+    setItems([...dataCopy]);
+  }
+
   
 
   return (
@@ -64,7 +71,7 @@ function Experience({title}){
           "I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end
           }</li>})}
      
-      {editMode && <button>Add</button>}
+      {editMode && <button onClick={handleAddClick}>Add</button>}
 
       </ul>
 
