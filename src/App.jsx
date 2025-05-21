@@ -46,7 +46,7 @@ function Experience({title, dataToString, initialItems}){
 
   return (
     <div>
-      <h2>{title} Experience 
+      <h2>{title} 
           <button onClick={handleButtonClick}>
             {editMode ? 'Submit' : 'Edit'}
           </button>
@@ -112,8 +112,8 @@ function App() {
           <li>999-999-9999</li>
         </ul>
 
-        <Experience title="Educational" initialItems={initialItemsEdu} dataToString={educationalText}></Experience>
-        <Experience title="Practical" initialItems={initialItemsPrac} dataToString={practicalText}></Experience>
+        <Experience title="Educational Experience" initialItems={initialItemsEdu} dataToString={educationalText}></Experience>
+        <Experience title="Practical Experience" initialItems={initialItemsPrac} dataToString={practicalText}></Experience>
     </div>
   )
 }
