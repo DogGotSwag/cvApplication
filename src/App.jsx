@@ -10,6 +10,7 @@ function Input({ id, label, text, handleChange }) {
         value={text}
         onChange={(e) => handleChange(label,id,e)}
       />
+
     </label>
   );
 }
@@ -59,9 +60,10 @@ function Experience({title}){
           items.map(curr => {
             return <li>
               <Input id={curr.id} label="where" text={curr.where} handleChange={handleChange}></Input>
-              <Input label="title" text={curr.title}></Input>
-              <Input label="start" text={curr.start}></Input>
-              <Input label="end" text={curr.end}></Input>
+              <Input id={curr.id} label="title" text={curr.title} handleChange={handleChange}></Input>
+              <Input id={curr.id} label="start" text={curr.start} handleChange={handleChange}></Input>
+              <Input id={curr.id} label="end" text={curr.end} handleChange={handleChange}></Input>
+              <button className='delete'>delete</button>
             </li>
           })
             
