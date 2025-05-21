@@ -118,12 +118,6 @@ function App() {
     <div>
 
         <Experience title="Resume for" isTop={true} initialItems={initialItemsTop} dataToString={topText}></Experience>
-        <h1>Resume for Didier Longoria</h1>
-        <ul>
-          <li>fakeEmail@gmail.com</li> 
-          <li>999-999-9999</li>
-        </ul>
-
         <Experience title="Educational Experience" initialItems={initialItemsEdu} dataToString={educationalText}></Experience>
         <Experience title="Practical Experience" initialItems={initialItemsPrac} dataToString={practicalText}></Experience>
     </div>
