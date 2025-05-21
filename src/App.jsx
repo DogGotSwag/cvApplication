@@ -15,7 +15,7 @@ function Input({ id, label, text, handleChange }) {
   );
 }
 
-function Experience({title, dataToString, initialItems}){
+function Experience({title, dataToString, initialItems, isTop}){
   const [items, setItems] = useState(initialItems);
   const [editMode, setEditMode] = useState(false);
 
@@ -46,11 +46,18 @@ function Experience({title, dataToString, initialItems}){
 
   return (
     <div>
+      {  (isTop) ? <h1>{title} 
+          <button onClick={handleButtonClick}>
+            {editMode ? 'Submit' : 'Edit'}
+          </button>
+      </h1> :
       <h2>{title} 
           <button onClick={handleButtonClick}>
             {editMode ? 'Submit' : 'Edit'}
           </button>
       </h2>
+      }
+      
       <ul>
 
         {
@@ -105,7 +112,7 @@ function App() {
   return (
     <div>
 
-        <Experience title="Resume for" initialItems={initialItemsTop} dataToString={educationalText}></Experience>
+        <Experience title="Resume for" isTop={true} initialItems={initialItemsTop} dataToString={educationalText}></Experience>
         <h1>Resume for Didier Longoria</h1>
         <ul>
           <li>fakeEmail@gmail.com</li> 
