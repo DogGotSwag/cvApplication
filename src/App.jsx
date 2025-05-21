@@ -79,7 +79,7 @@ function Experience({title, dataToString, initialItems, isTop}){
           items.map(curr => {
         return <li key={curr.id}>{ dataToString(curr)}</li>})}
      
-      {editMode && <button onClick={handleAddClick}>Add</button>}
+      {editMode && !isTop && <button onClick={handleAddClick}>Add</button>}
 
       </ul>
 
