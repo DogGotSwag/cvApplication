@@ -95,12 +95,17 @@ const initialItemsEdu = [
 const initialItemsPrac = [
   { id: crypto.randomUUID(), where: '', title: '', description: '', start:'', end:'' },
 ];
+const initialItemsTop = [
+  { id: crypto.randomUUID(), name: '', email: '', phone: '' },
+];
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
+
+        <Experience title="Resume for" initialItems={initialItemsTop} dataToString={educationalText}></Experience>
         <h1>Resume for Didier Longoria</h1>
         <ul>
           <li>fakeEmail@gmail.com</li> 
