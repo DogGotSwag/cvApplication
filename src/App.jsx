@@ -87,9 +87,11 @@ function educationalText(where, title, start, end){
   return "I was at "+where+" studying for "+title+" from "+start+" - "+end;
 }
 
-const initialItems = [
-  { id: 0, where: 'Walmart', title: 'cashier', start:'2022', end:'present' },
-  { id: 1, where: 'TacoBell', title: 'cashier', start:'2020', end:'2022' },
+const initialItemsEdu = [
+  { id: 0, where: '', title: '', start:'', end:'' },
+];
+const initialItemsPrac = [
+  { id: 0, where: '', title: '', description: '', start:'', end:'' },
 ];
 
 function App() {
@@ -103,8 +105,8 @@ function App() {
           <li>999-999-9999</li>
         </ul>
 
-        <Experience title="Educational" initialItems={initialItems} dataToString={educationalText}></Experience>
-        <Experience title="Practical" initialItems={initialItems} dataToString={practicalText}></Experience>
+        <Experience title="Educational" initialItems={initialItemsEdu} dataToString={educationalText}></Experience>
+        <Experience title="Practical" initialItems={initialItemsPrac} dataToString={practicalText}></Experience>
     </div>
   )
 }
