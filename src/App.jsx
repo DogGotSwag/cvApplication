@@ -44,6 +44,13 @@ function Experience({title}){
     setItems([...dataCopy]);
   }
 
+  function handleDelete(id){
+    const index = items.findIndex(curr => curr.id === id);
+    let copy = [...items];
+    copy.splice(index, 1);
+    setItems([...copy]);
+  }
+
   
 
   return (
@@ -63,7 +70,7 @@ function Experience({title}){
               <Input id={curr.id} label="title" text={curr.title} handleChange={handleChange}></Input>
               <Input id={curr.id} label="start" text={curr.start} handleChange={handleChange}></Input>
               <Input id={curr.id} label="end" text={curr.end} handleChange={handleChange}></Input>
-              <button className='delete'>delete</button>
+              <button className='delete' onClick={() => handleDelete(curr.id)}>delete</button>
             </li>
           })
             
