@@ -15,6 +15,11 @@ function Input({ id, label, text, handleChange }) {
   );
 }
 
+function Header({isTop, children, title, name}){
+  if(isTop) return <h1>{title+" "+name} {children} </h1> 
+  return <h2>{title} {children} </h2> 
+}
+
 function Experience({title, dataToString, initialItems, isTop = false}){
   const [items, setItems] = useState(initialItems);
   const [editMode, setEditMode] = useState(false);
@@ -46,17 +51,12 @@ function Experience({title, dataToString, initialItems, isTop = false}){
 
   return (
     <div>
-      {  (isTop) ? <h1>{title+" "+items[0].name} 
-          <button onClick={handleButtonClick}>
+
+      <Header isTop={isTop} title={title} name={items[0].name}>
+        <button onClick={handleButtonClick}>
             {editMode ? 'Submit' : 'Edit'}
-          </button>
-      </h1> :
-      <h2>{title} 
-          <button onClick={handleButtonClick}>
-            {editMode ? 'Submit' : 'Edit'}
-          </button>
-      </h2>
-      }
+        </button>
+      </Header>
       
       <ul>
 
