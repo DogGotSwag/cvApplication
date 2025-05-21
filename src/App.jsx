@@ -46,7 +46,7 @@ function Experience({title, dataToString, initialItems, isTop}){
 
   return (
     <div>
-      {  (isTop) ? <h1>{title} 
+      {  (isTop) ? <h1>{title+" "+items[0].name} 
           <button onClick={handleButtonClick}>
             {editMode ? 'Submit' : 'Edit'}
           </button>
@@ -95,6 +95,11 @@ function practicalText(data){
 function educationalText(data){
   return "I was at "+data.where+" studying for "+data.title+" from "+data.start+" - "+data.end;
 }
+function topText(data){
+  return <>
+   <p>{data.email} </p>
+   <p>{data.phone}</p></>;
+}
 
 const initialItemsEdu = [
   { id: crypto.randomUUID(), where: '', title: '', start:'', end:'' },
@@ -112,7 +117,7 @@ function App() {
   return (
     <div>
 
-        <Experience title="Resume for" isTop={true} initialItems={initialItemsTop} dataToString={educationalText}></Experience>
+        <Experience title="Resume for" isTop={true} initialItems={initialItemsTop} dataToString={topText}></Experience>
         <h1>Resume for Didier Longoria</h1>
         <ul>
           <li>fakeEmail@gmail.com</li> 
