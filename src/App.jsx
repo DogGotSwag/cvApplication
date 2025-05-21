@@ -51,8 +51,6 @@ function Experience({title, dataToString}){
     setItems([...copy]);
   }
 
-  
-
   return (
     <div>
       <h2>{title} Experience 
@@ -65,18 +63,21 @@ function Experience({title, dataToString}){
         {
           editMode ? 
           items.map(curr => {
+            const arrayOfInputs =[];
+            Object.keys(curr).forEach( key => {
+              if(key === 'id') return ;
+              arrayOfInputs.push(<Input id={curr.id} label={key} text={curr[key]} handleChange={handleChange}></Input>);
+            });
+
             return <li>
-              <Input id={curr.id} label="where" text={curr.where} handleChange={handleChange}></Input>
-              <Input id={curr.id} label="title" text={curr.title} handleChange={handleChange}></Input>
-              <Input id={curr.id} label="start" text={curr.start} handleChange={handleChange}></Input>
-              <Input id={curr.id} label="end" text={curr.end} handleChange={handleChange}></Input>
+              {arrayOfInputs}
               <button className='delete' onClick={() => handleDelete(curr.id)}>delete</button>
             </li>
           })
             
           : 
           items.map(curr => {
-        return <li>{ dataToString(curr.where, curr.title, curr.start, curr.end)}</li>})}
+        return <li key={curr.id}>{ dataToString(curr.where, curr.title, curr.start, curr.end)}</li>})}
      
       {editMode && <button onClick={handleAddClick}>Add</button>}
 
