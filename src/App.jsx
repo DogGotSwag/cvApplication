@@ -8,7 +8,7 @@ function Input({ id, label, text, handleChange }) {
       {': '}
       <input
         value={text}
-        onChange={(e) => handleChange(id,e)}
+        onChange={(e) => handleChange(label,id,e)}
       />
     </label>
   );
@@ -16,7 +16,7 @@ function Input({ id, label, text, handleChange }) {
 
 function Experience({title}){
 
-  let nextId = 3;
+  let nextId = 2;
   const initialItems = [
     { id: 0, where: 'Walmart', title: 'cashier', start:'2022', end:'present' },
     { id: 1, where: 'TacoBell', title: 'cashier', start:'2020', end:'2022' },
@@ -29,9 +29,11 @@ function Experience({title}){
     (editMode) ? setEditMode(false): setEditMode(true);
   }
 
-  function handleChange(id, e){
-    
-
+  function handleChange(type, id, e){
+    const index = items.findIndex(curr => curr.id === id);
+    let copy = [...items];
+    copy[index][type] = e.target.value;
+    setItems([...copy]);
   }
 
   
