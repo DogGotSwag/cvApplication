@@ -15,7 +15,7 @@ function Input({ id, label, text, handleChange }) {
   );
 }
 
-function Experience({title}){
+function Experience({title, dataToString}){
 
   let nextId = 2;
   const initialItems = [
@@ -24,7 +24,7 @@ function Experience({title}){
   ];
 
   const [items, setItems] = useState(initialItems);
-  const [editMode, setEditMode] = useState(true);
+  const [editMode, setEditMode] = useState(false);
 
   function handleButtonClick(e){
     (editMode) ? setEditMode(false): setEditMode(true);
@@ -76,9 +76,7 @@ function Experience({title}){
             
           : 
           items.map(curr => {
-        return <li>{
-          "I was at "+curr.where+" working as "+curr.title+" from "+curr.start+" - "+curr.end
-          }</li>})}
+        return <li>{ dataToString(curr.where, curr.title, curr.start, curr.end)}</li>})}
      
       {editMode && <button onClick={handleAddClick}>Add</button>}
 
@@ -86,6 +84,13 @@ function Experience({title}){
 
     </div>
   );
+}
+
+function practicalText(where, title, start, end){
+  return "I was at "+where+" working as "+title+" from "+start+" - "+end;
+}
+function educationalText(where, title, start, end){
+  return "I was at "+where+" studying for "+title+" from "+start+" - "+end;
 }
 
 function App() {
@@ -99,11 +104,8 @@ function App() {
           <li>999-999-9999</li>
         </ul>
 
-        <h2>Educational Experience</h2>
-        <p>I was at EPCC studying for CS from 2022-2024</p>
-        <p>I was at HHS studying for diploma from 2018-2022</p>
-
-        <Experience title="Practical"></Experience>
+        <Experience title="Educational" dataToString={educationalText}></Experience>
+        <Experience title="Practical" dataToString={practicalText}></Experience>
     </div>
   )
 }
