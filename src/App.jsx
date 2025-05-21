@@ -31,7 +31,7 @@ function Experience({title, dataToString, initialItems}){
   }
 
   function handleAddClick(){
-    const newInfoObj = {id: crypto.randomUUID(), where: '', title: '', start: '', end:''};
+    const newInfoObj = {...initialItems[0], id: crypto.randomUUID()};
     const dataCopy = [...items];
     dataCopy.push(newInfoObj);
     setItems([...dataCopy]);
